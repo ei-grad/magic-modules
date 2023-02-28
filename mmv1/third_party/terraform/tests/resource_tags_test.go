@@ -184,7 +184,7 @@ func testAccCheckTagsTagKeyDestroyProducer(t *testing.T) func(s *terraform.State
 				billingProject = config.BillingProject
 			}
 
-			_, err = sendRequest(config, "GET", billingProject, url, config.userAgent, nil)
+			_, err = SendRequest(config, "GET", billingProject, url, config.UserAgent, nil)
 			if err == nil {
 				return fmt.Errorf("TagsTagKey still exists at %s", url)
 			}
@@ -320,7 +320,7 @@ func testAccCheckTagsTagValueDestroyProducer(t *testing.T) func(s *terraform.Sta
 				billingProject = config.BillingProject
 			}
 
-			_, err = sendRequest(config, "GET", billingProject, url, config.userAgent, nil)
+			_, err = SendRequest(config, "GET", billingProject, url, config.UserAgent, nil)
 			if err == nil {
 				return fmt.Errorf("TagsTagValue still exists at %s", url)
 			}
@@ -404,7 +404,7 @@ func testAccCheckTagsTagBindingDestroyProducer(t *testing.T) func(s *terraform.S
 				billingProject = config.BillingProject
 			}
 
-			_, err = sendRequest(config, "GET", billingProject, url, config.userAgent, nil)
+			_, err = SendRequest(config, "GET", billingProject, url, config.UserAgent, nil)
 			if err == nil {
 				return fmt.Errorf("TagsTagBinding still exists at %s", url)
 			}
@@ -871,7 +871,7 @@ func testAccCheckTagsLocationTagBindingDestroyProducer(t *testing.T) func(s *ter
 				billingProject = config.BillingProject
 			}
 
-			_, err = sendRequest(config, "GET", billingProject, url, config.userAgent, nil)
+			_, err = SendRequest(config, "GET", billingProject, url, config.UserAgent, nil)
 			if err == nil {
 				return fmt.Errorf("TagsTagBinding still exists at %s", url)
 			}

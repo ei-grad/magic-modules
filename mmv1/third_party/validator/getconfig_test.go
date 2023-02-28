@@ -116,13 +116,13 @@ func TestNewConfigUserAgent(t *testing.T) {
 	}
 
 	for _, c := range cases {
-		t.Run(c.userAgent, func(t *testing.T) {
-			cfg, err := NewConfig(ctx, "project", "", "", offline, c.userAgent, nil)
+		t.Run(c.UserAgent, func(t *testing.T) {
+			cfg, err := NewConfig(ctx, "project", "", "", offline, c.UserAgent, nil)
 			if err != nil {
 				t.Fatalf("error building config: %s", err)
 			}
 
-			assert.Equal(t, c.expected, cfg.UserAgent())
+			assert.Equal(t, c.expected, cfg.UserAgent)
 		})
 	}
 }
@@ -147,5 +147,5 @@ func TestNewConfigUserAgent_usesPassedClient(t *testing.T) {
 		t.Fatalf("error building config: %s", err)
 	}
 
-	assert.Exactly(t, client, cfg.Client())
+	assert.Exactly(t, client, cfg.Client)
 }
